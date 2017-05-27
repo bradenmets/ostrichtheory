@@ -1,0 +1,6 @@
+styling
+6 pages
+each page gets custom elements and funcitonality
+styling that is actually useful (i.e. bio should have white on black background instead of black on black)
+Facebook photo album tech, w/ carousel on select
+routing for all the files, which should determine which render gets called for each component(?)
