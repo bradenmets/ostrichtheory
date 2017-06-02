@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route,NavLink} from 'react-router-dom';
 import {Nav,NavItem,MenuItem,NavDropdown} from 'react-bootstrap'
-const Home = () => <h1>Home</h1>
-class NavDropdownExample extends Component{
+// Import pages
+import {Bio,Home} from './components/screens'
+
+
+
+class NavBar extends Component{
   handleSelect = (eventKey) => {
     eventKey.preventDefault();
     alert(`selected ${eventKey}`);
@@ -11,16 +15,7 @@ class NavDropdownExample extends Component{
   render() {
     return (
       <Nav bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
-        <NavItem eventKey="1" href="/home">Home</NavItem>
-        <NavItem eventKey="2" title="Item">Music</NavItem>
-        <NavItem eventKey="3" disabled>Lyrics</NavItem>
-        <NavDropdown eventKey="4" title="Dropdown" id="nav-dropdown">
-          <MenuItem eventKey="4.1">Action</MenuItem>
-          <MenuItem eventKey="4.2">Another action</MenuItem>
-          <MenuItem eventKey="4.3">Something else here</MenuItem>
-          <MenuItem divider />
-          <MenuItem eventKey="4.4">Separated link</MenuItem>
-        </NavDropdown>
+        <Links />
       </Nav>
     );
   }
@@ -28,9 +23,9 @@ class NavDropdownExample extends Component{
 
 const Links = () =>(
   <nav>
-    <NavLink exact to="/">Home</NavLink>
-    <NavLink to={{pathname:'/about'}}>Music</NavLink>
-    <NavLink replace to="/contact">Photos</NavLink>
+    <NavLink replace to="/">Home</NavLink>
+    <NavLink replace to="/music">Music</NavLink>
+    <NavLink replace to="/photos">Photos</NavLink>
     <NavLink replace to="/lyrics">Lyrics</NavLink>
     <NavLink replace to="/bio">Bio</NavLink>
     <NavLink replace to="/join">Join!</NavLink>
@@ -38,8 +33,16 @@ const Links = () =>(
   )
 const App = () =>( 
   <Router>
-    <div>
-      <NavDropdownExample />
+    <div >
+      <NavBar />
+      <div className="main">
+      <Route exact path="/"   component={Home}/>
+      <Route path="/music"    component={Bio}/>
+      <Route path="/photos"  component={Bio}/>
+      <Route path="/lyrics"   component={Bio}/>
+      <Route path="/bio"      component={Bio}/>
+      <Route path="/join"     component={Bio}/>
+      </div>
     </div>
 
   </Router>
