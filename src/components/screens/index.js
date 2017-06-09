@@ -1,0 +1,6 @@
+export {Bio} from './bio-page.js'
+export {Home} from './home-page.js'
+export {Join} from './join-page.js'
+export {Photos} from './photo-page.js'
+export {Lyrics} from './lyrics-page.js'
+export {Music} from './music-page.js'

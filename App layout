@@ -1,0 +1,17 @@
+App layout
+	home
+		Carousel
+			Photos[]
+		Shows
+
+	music
+		Soundcloud
+		Spotify
+	lyrics
+		Album
+			AlbumArt
+			Songs
+				Title
+				Lyrics
+	bio
+	join
